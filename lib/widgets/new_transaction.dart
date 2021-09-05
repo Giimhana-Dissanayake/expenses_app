@@ -41,17 +41,36 @@ class _NewTransactionState extends State<NewTransaction> {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             TextField(
-                decoration: InputDecoration(labelText: "Title"),
-                controller: titleController,
-                onSubmitted: (_) => sumbitData()),
+              decoration: InputDecoration(labelText: "Title"),
+              controller: titleController,
+              onSubmitted: (_) => sumbitData(),
+            ),
             TextField(
-                decoration: InputDecoration(labelText: "Amount"),
-                controller: amountController,
-                keyboardType: TextInputType.number,
-                onSubmitted: (_) => sumbitData()),
-            FlatButton(
+              decoration: InputDecoration(labelText: "Amount"),
+              controller: amountController,
+              keyboardType: TextInputType.number,
+              onSubmitted: (_) => sumbitData(),
+            ),
+            Container(
+              height: 70,
+              child: Row(
+                children: [
+                  Text('No Date Chosen!'),
+                  FlatButton(
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                    textColor: Theme.of(context).primaryColor,
+                    onPressed: () {},
+                  ),
+                ],
+              ),
+            ),
+            RaisedButton(
               child: Text('Add Transaction'),
-              textColor: Colors.purple,
+              color: Theme.of(context).primaryColor,
+              textColor: Theme.of(context).textTheme.button!.color,
               onPressed: sumbitData,
             )
           ],
