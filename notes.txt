@@ -1,0 +1,4 @@
+80. container vs columns vs rows
+
+*by default container take the child width. if the parent has a width it takes that width. we can even give our own width.
+*by default column takes the available height and row take the available width
